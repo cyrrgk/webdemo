@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>webdemo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>ViewDictionary</servlet-name>
+    <servlet-class>chapter4.ViewDictionary</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewDictionary</servlet-name>
+    <url-pattern>/servlet/ViewDictionary</url-pattern>
+  </servlet-mapping>
+  
+  
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/webdb</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  
+  <servlet>
+    <servlet-name>TestDoGet</servlet-name>
+    <servlet-class>chapter4.TestDoGet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestDoGet</servlet-name>
+    <url-pattern>/servlet/TestDoGet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ShowImage</servlet-name>
+    <servlet-class>chapter4.ShowImage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowImage</servlet-name>
+    <url-pattern>/servlet/ShowImage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>servertime</servlet-name>
+    <jsp-file>/chapter5/servertime.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servertime</servlet-name>
+    <url-pattern>/servertime.html</url-pattern>
+  </servlet-mapping>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>/WEB-INF/tld/elfun.tld</taglib-uri>
+      <taglib-location>/WEB-INF/tld/elfun.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+  
+  
+  <servlet>
+    <servlet-name>ValidationCode</servlet-name>
+    <servlet-class>chapter6.ValidationCode</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>ValidationCode</servlet-name>
+     <url-pattern>/chapter6/validation_code</url-pattern>
+  </servlet-mapping>
+</web-app>

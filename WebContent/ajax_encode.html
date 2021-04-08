@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax</title>
+<script type="text/javascript">
+  String.prototype.lenB = function()
+  {
+	  return this.replace(/[^\x0-\xf]/g, "##").length;
+	  
+  }
+  
+  function getXMLHTTPRequest()
+  {
+	  var myRequest = null;
+	  myRequest = new ActiveXObject("Microsoft.XMLHTTP");
+	  return myRequest;
+  }
+
+  function send()
+  {
+	  var obj = document.getElementById("name");
+	  try{
+		  var myRequest = getXMLHTTPRequest();
+		  if(myRequest)
+		  {
+			  myRequest.onreadystatechange = function()
+			  {
+				  if(myRequest.readyState == 4)
+					  {
+					    alert(myRequest.responseText);
+					  }
+			  };
+			  
+			  myRequest.open("POST","/webdemo/servlet/AjaxEncode",true);
+			  var msg = "name="+obj.value;
+			  myRequest.setRequsetHeader("Content-Length",msg.len());
+			  myRequest.setRequestHeader("content-type","application/x-www-form-urlencoded");
+			  myRequest.send(msg);
+		  }
+	  }catch(e){
+		  alert(e);
+	  }
+  }
+</script>
+</head>
+<body>
+<input name = "name"/><p/>
+<input type="button" value="提交" onclick="send()"/>
+</body>
+</html>
