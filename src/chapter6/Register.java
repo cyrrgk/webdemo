@@ -40,7 +40,6 @@ public class Register extends DBServlet{
 			}
 			email = (email==null)?"":email;
 			String passwordMD5 = Encrypter.md5Encrypt(password);
-			String sql = "insert intol"
 		}catch(Exception e){
 			e.printStackTrace();
 		}
