@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structs>
+  <package name="Struct 2" extends ="structs-default">
+     <action name="query" class="chapter7.action.QueryAction">
+       <result name = "success">/chapter7/result.jsp</result>
+       <result name="error">/error.jsp</result>
+     </action>
+  </package>
+</structs>
