@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<structs>
-  <package name="Struct 2" extends ="structs-default">
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <package name="Struts 2" extends ="struts-default">
      <action name="query" class="chapter7.action.QueryAction">
        <result name = "success">/chapter7/result.jsp</result>
        <result name="error">/error.jsp</result>
      </action>
   </package>
-</structs>
+</struts>
