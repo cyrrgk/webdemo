@@ -6,7 +6,7 @@
 <struts>
   <package name="Struts 2" extends ="struts-default">
      <action name="query" class="chapter7.action.QueryAction">
-       <result name = "success">/chapter7/result.jsp</result>
+       <result name="result">/chapter7/result.jsp</result>
        <result name="error">/error.jsp</result>
      </action>
   </package>
