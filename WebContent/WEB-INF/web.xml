@@ -77,4 +77,12 @@
     <filter-name>struts2</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <servlet>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>chapter6.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>Register</servlet-name>
+     <url-pattern>/chapter6/register</url-pattern>
+  </servlet-mapping>
 </web-app>

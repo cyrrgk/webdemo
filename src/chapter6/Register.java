@@ -2,6 +2,7 @@ package chapter6;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,8 +41,15 @@ public class Register extends DBServlet{
 			}
 			email = (email==null)?"":email;
 			String passwordMD5 = Encrypter.md5Encrypt(password);
+			String sql = "insert into t_users(user_name,password_md5,email) values(?,?,?)";
+			execSQL(sql, userName,passwordMD5,email);
+			request.setAttribute("info", "用户注册成功");
 		}catch(Exception e){
 			e.printStackTrace();
+			request.setAttribute("info", userName+"已经被占用");
+		}finally {
+			RequestDispatcher rd = request.getRequestDispatcher("result.jsp");
+			rd.forward(request, response);
 		}
 	}
 }
